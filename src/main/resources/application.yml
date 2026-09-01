@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: digital-wallet-payment-system
+  datasource:
+    url: ${DB_URL:jdbc:mysql://localhost:3306/digital_wallet?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC}
+    username: ${DB_USERNAME:root}
+    password: ${DB_PASSWORD:password}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+        jdbc:
+          time_zone: UTC
+server:
+  port: ${SERVER_PORT:8080}
+app:
+  jwt:
+    secret: ${JWT_SECRET:}
+    expiration-minutes: ${JWT_EXPIRATION_MINUTES:120}
+  seed:
+    enabled: ${SEED_DATA_ENABLED:true}
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html

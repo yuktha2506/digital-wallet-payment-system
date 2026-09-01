@@ -1,0 +1,24 @@
+{
+  "info": {
+    "name": "Digital Wallet Payment System",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {"key": "baseUrl", "value": "http://localhost:8080"},
+    {"key": "jwtToken", "value": ""},
+    {"key": "walletNumber", "value": "WALLETUSER002"}
+  ],
+  "item": [
+    {"name":"Register","request":{"method":"POST","header":[{"key":"Content-Type","value":"application/json"}],"url":"{{baseUrl}}/api/auth/register","body":{"mode":"raw","raw":"{\n  \"name\": \"Demo User\",\n  \"email\": \"demo@wallet.test\",\n  \"phone\": \"9000000099\",\n  \"password\": \"Password1\"\n}"}}},
+    {"name":"Login","event":[{"listen":"test","script":{"exec":["const json = pm.response.json();","pm.collectionVariables.set('jwtToken', json.token);"]}}],"request":{"method":"POST","header":[{"key":"Content-Type","value":"application/json"}],"url":"{{baseUrl}}/api/auth/login","body":{"mode":"raw","raw":"{\n  \"email\": \"demo@wallet.test\",\n  \"password\": \"Password1\"\n}"}}},
+    {"name":"Get Wallet","request":{"method":"GET","header":[{"key":"Authorization","value":"Bearer {{jwtToken}}"}],"url":"{{baseUrl}}/api/wallet"}},
+    {"name":"Get Balance","request":{"method":"GET","header":[{"key":"Authorization","value":"Bearer {{jwtToken}}"}],"url":"{{baseUrl}}/api/wallet/balance"}},
+    {"name":"Add Money","request":{"method":"POST","header":[{"key":"Authorization","value":"Bearer {{jwtToken}}"},{"key":"Content-Type","value":"application/json"}],"url":"{{baseUrl}}/api/wallet/add-money","body":{"mode":"raw","raw":"{\n  \"amount\": 1000.00,\n  \"description\": \"Top up\"\n}"}}},
+    {"name":"Withdraw","request":{"method":"POST","header":[{"key":"Authorization","value":"Bearer {{jwtToken}}"},{"key":"Content-Type","value":"application/json"}],"url":"{{baseUrl}}/api/wallet/withdraw","body":{"mode":"raw","raw":"{\n  \"amount\": 100.00,\n  \"description\": \"ATM withdrawal\"\n}"}}},
+    {"name":"Transfer","request":{"method":"POST","header":[{"key":"Authorization","value":"Bearer {{jwtToken}}"},{"key":"Content-Type","value":"application/json"}],"url":"{{baseUrl}}/api/payments/transfer","body":{"mode":"raw","raw":"{\n  \"receiverWalletNumber\": \"{{walletNumber}}\",\n  \"amount\": 500.00,\n  \"description\": \"Payment\",\n  \"idempotencyKey\": \"PAY-{{$timestamp}}\"\n}"}}},
+    {"name":"Get Transactions","request":{"method":"GET","header":[{"key":"Authorization","value":"Bearer {{jwtToken}}"}],"url":"{{baseUrl}}/api/transactions?page=0&size=10"}},
+    {"name":"Get Transaction By ID","request":{"method":"GET","header":[{"key":"Authorization","value":"Bearer {{jwtToken}}"}],"url":"{{baseUrl}}/api/transactions/{{transactionId}}"}},
+    {"name":"Admin Users","request":{"method":"GET","header":[{"key":"Authorization","value":"Bearer {{jwtToken}}"}],"url":"{{baseUrl}}/api/admin/users"}},
+    {"name":"Admin Transactions","request":{"method":"GET","header":[{"key":"Authorization","value":"Bearer {{jwtToken}}"}],"url":"{{baseUrl}}/api/admin/transactions?page=0&size=20"}}
+  ]
+}
