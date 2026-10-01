@@ -1,5 +1,4 @@
 package com.example.wallet.dto.response;
-
 import com.example.wallet.entity.TransactionStatus;
 import java.math.BigDecimal;
 import java.time.Instant;
