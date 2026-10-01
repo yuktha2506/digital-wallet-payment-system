@@ -1,5 +1,4 @@
 package com.example.wallet.dto.response;
-
 import com.example.wallet.entity.TransactionStatus;
 import com.example.wallet.entity.TransactionType;
 import java.math.BigDecimal;
