@@ -1,5 +1,4 @@
 package com.example.wallet.config;
-
 import com.example.wallet.entity.PaymentRequest;
 import com.example.wallet.entity.Reward;
 import com.example.wallet.entity.Role;
@@ -26,8 +25,7 @@ import org.springframework.transaction.annotation.Transactional;
 public class DataSeeder {
     @Bean
     CommandLineRunner seedData(SeedRunner seedRunner) {
-        return args -> seedRunner.seed();
-    }
+        return args -> seedRunner.seed();}
 
     @Configuration
     static class SeedRunner {
