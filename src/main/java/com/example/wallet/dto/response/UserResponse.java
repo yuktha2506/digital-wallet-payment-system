@@ -1,5 +1,4 @@
 package com.example.wallet.dto.response;
-
 import com.example.wallet.entity.Role;
 import java.time.Instant;
 
