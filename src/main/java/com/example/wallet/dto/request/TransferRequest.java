@@ -1,5 +1,4 @@
 package com.example.wallet.dto.request;
-
 import jakarta.validation.constraints.DecimalMin;
 import jakarta.validation.constraints.Digits;
 import jakarta.validation.constraints.NotBlank;
