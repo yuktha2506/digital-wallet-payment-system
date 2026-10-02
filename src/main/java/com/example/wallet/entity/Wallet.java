@@ -1,5 +1,4 @@
 package com.example.wallet.entity;
-
 import com.example.wallet.exception.InsufficientBalanceException;
 import com.example.wallet.exception.InvalidPaymentException;
 import jakarta.persistence.*;
