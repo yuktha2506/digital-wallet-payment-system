@@ -1,5 +1,4 @@
 package com.example.wallet.repository;
-
 import com.example.wallet.entity.TransactionStatus;
 import com.example.wallet.entity.TransactionType;
 import com.example.wallet.entity.WalletTransaction;
