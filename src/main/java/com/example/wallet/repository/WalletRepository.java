@@ -1,5 +1,4 @@
 package com.example.wallet.repository;
-
 import com.example.wallet.entity.Wallet;
 import jakarta.persistence.LockModeType;
 import java.util.Optional;
