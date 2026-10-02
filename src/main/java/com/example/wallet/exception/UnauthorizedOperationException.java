@@ -1,5 +1,4 @@
 package com.example.wallet.exception;
-
 import org.springframework.http.HttpStatus;
 
 public class UnauthorizedOperationException extends ApiException {
