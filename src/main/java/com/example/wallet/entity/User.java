@@ -1,5 +1,4 @@
 package com.example.wallet.entity;
-
 import jakarta.persistence.*;
 import java.time.Instant;
 
