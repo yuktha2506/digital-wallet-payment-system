@@ -1,5 +1,4 @@
 package com.example.wallet.repository;
-
 import com.example.wallet.entity.Reward;
 import com.example.wallet.entity.WalletTransaction;
 import java.util.Optional;
