@@ -1,5 +1,4 @@
 package com.example.wallet.service.impl;
-
 import com.example.wallet.entity.Reward;
 import com.example.wallet.entity.TransactionStatus;
 import com.example.wallet.entity.TransactionType;
