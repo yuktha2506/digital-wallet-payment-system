@@ -1,5 +1,4 @@
 package com.example.wallet.security;
-
 import com.example.wallet.repository.UserRepository;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
