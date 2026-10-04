@@ -1,5 +1,4 @@
 package com.example.wallet.security;
-
 import com.example.wallet.entity.User;
 import java.util.Collection;
 import java.util.List;
