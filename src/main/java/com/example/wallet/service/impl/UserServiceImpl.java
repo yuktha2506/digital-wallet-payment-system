@@ -1,5 +1,4 @@
 package com.example.wallet.service.impl;
-
 import com.example.wallet.dto.request.LoginRequest;
 import com.example.wallet.dto.request.RegisterRequest;
 import com.example.wallet.dto.response.AuthResponse;
