@@ -1,5 +1,4 @@
 package com.example.wallet.util;
-
 import java.security.SecureRandom;
 
 public final class IdGenerator {
